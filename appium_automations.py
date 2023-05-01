@@ -48,16 +48,18 @@ class AppiumAutomationHandler:
     def __init__(self, device_id):
         # Appium
         options = UiAutomator2Options()
-        options.udid = device_id
+        # options.udid = device_id
         # Set the connection timeout to 2 days
         options.new_command_timeout = 3600 * 48
-        self.driver = webdriver.Remote(
-            'http://127.0.0.1:4723', options=options)
-        self.driver.implicitly_wait(20)
 
-        print(options.udid)
+        # print(options.udid)
         print(options.platform_name)
         print(options.automation_name)
+
+        self.driver = webdriver.Remote(
+            'http://127.0.0.1:4723', options=options)
+
+        self.driver.implicitly_wait(20)
 
         self.button_class = "android.widget.Button"
         self.text_class = "android.widget.TextView"
@@ -273,11 +275,11 @@ class AppiumAutomationHandler:
         if gtg_accept_switch := self.driver.find_element(AppiumBy.CLASS_NAME, self.switch_class):
             gtg_accept_switch.click()
 
-        if button := self.__find_button_by_text("Send it now for free"):
-            button.click()
+        # if button := self.__find_button_by_text("Send it now for free"):
+        #     button.click()
 
-        if button := self.__find_button_by_text("Home"):
-            button.click()
+        # if button := self.__find_button_by_text("Home"):
+        #     button.click()
 
         return True
 

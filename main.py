@@ -1,7 +1,9 @@
 import logging
+import sys
 from time import sleep
 
 from dotenv import load_dotenv
+from adb_automations import ADBAutomationHandler
 
 from appium_automations import Postcard, Recipient
 from scheduler import PostcardScheduler
@@ -12,7 +14,7 @@ load_dotenv()
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
-IMAGE_NAME = "PXL_20230119_154801396.jpg"
+# IMAGE_NAME = "PXL_20230119_154801396.jpg"
 recipient = Recipient(
     first_name="Julian",
     last_name="Steiner",
@@ -20,7 +22,7 @@ recipient = Recipient(
     postal_code="8755",
     location="Ennenda"
 )
-# IMAGE_NAME = "IMG-20221026-WA0006.jpg"
+IMAGE_NAME = "IMG-20221026-WA0006.jpg"
 
 scheduler = PostcardScheduler()
 
