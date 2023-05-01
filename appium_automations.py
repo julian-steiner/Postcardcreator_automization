@@ -275,11 +275,11 @@ class AppiumAutomationHandler:
         if gtg_accept_switch := self.driver.find_element(AppiumBy.CLASS_NAME, self.switch_class):
             gtg_accept_switch.click()
 
-        # if button := self.__find_button_by_text("Send it now for free"):
-        #     button.click()
+        if button := self.__find_button_by_text("Send it now for free"):
+            button.click()
 
-        # if button := self.__find_button_by_text("Home"):
-        #     button.click()
+        if button := self.__find_button_by_text("Home"):
+            button.click()
 
         return True
 
